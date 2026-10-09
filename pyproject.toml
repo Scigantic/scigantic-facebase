@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scigantic-facebase"
+version = "0.1.0"
+description = "Search FaceBase, the craniofacial research data hub, and read its open-access micro-CT, imaging and sequencing data from Python: a typed catalog over FaceBase's open metadata API, citations in the form its Terms of Use ask for, ranged reads of remote files, and single-slice reads from zipped micro-CT stacks without downloading them."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT-0" }
+authors = [{ name = "Scigantic" }]
+keywords = ["facebase", "craniofacial", "micro-ct", "zebrafish", "deriva", "ermrest", "bioinformatics"]
+classifiers = [
+  "License :: OSI Approved :: MIT No Attribution License (MIT-0)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Typing :: Typed",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+dependencies = [
+  "requests>=2.28,<3",
+  "numpy>=1.24,<3",
+  "tifffile>=2023.7,<2027",
+  "imagecodecs>=2023.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "mypy>=1.10", "types-requests"]
+
+[project.urls]
+Homepage = "https://scigantic.com"
+Repository = "https://github.com/Scigantic/scigantic-facebase"
+Issues = "https://github.com/Scigantic/scigantic-facebase/issues"
+FaceBase = "https://www.facebase.org"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scigantic_facebase = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: hits facebase.org"]
+
+[tool.mypy]
+strict = true
+
+[[tool.mypy.overrides]]
+module = ["tifffile", "tifffile.*"]
+ignore_missing_imports = true
