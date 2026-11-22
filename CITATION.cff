@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+type: software
+title: scigantic-facebase
+abstract: "Search FaceBase, the craniofacial research data hub, and read its open-access micro-CT, imaging and sequencing data from Python. Provides a typed catalog over FaceBase's open metadata API, ranged reads of remote files, and single-slice reads from zipped micro-CT stacks without downloading them."
+authors:
+  - name: Scigantic
+    website: https://scigantic.com
+repository-code: https://github.com/Scigantic/scigantic-facebase
+url: https://pypi.org/project/scigantic-facebase/
+license: MIT-0
+keywords:
+  - "facebase"
+  - "craniofacial"
+  - "micro-ct"
+  - "zebrafish"
+  - "deriva"
+  - "ermrest"
+  - "bioinformatics"
+version: "0.1.0"
+date-released: '2026-10-09'
